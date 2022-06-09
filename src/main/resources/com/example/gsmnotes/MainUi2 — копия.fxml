@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gsmnotes.gui.DeviceController">
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Основа">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <bottom>
+                        <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <items>
+                            <Button fx:id="btnCreate" mnemonicParsing="false" onAction="#btnCreateClicked" text="Создать" />
+                              <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteClicked" text="удалить" />
+                              <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveClicked" text="сохранить" />
+                          </items>
+                        </ToolBar>
+                     </bottom>
+                     <center>
+                        <SplitPane dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <items>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                 <center>
+                                    <ListView fx:id="deviceListView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                                 </center>
+                              </BorderPane>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                 <center>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Label text="Имя">
+                                                   <font>
+                                                      <Font size="21.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </padding>
+                                                </Label>
+                                                <TextField fx:id="deviceNameTextField" prefHeight="27.0" prefWidth="202.0" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Label text="Модель">
+                                                   <font>
+                                                      <Font size="21.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </padding>
+                                                </Label>
+                                                <TextField fx:id="deviceModelTextField" prefHeight="27.0" prefWidth="202.0" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <TextArea fx:id="deviceInfo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="325.0" prefWidth="295.0" />
+                                          <DatePicker fx:id="deviceDatePicker" prefHeight="27.0" prefWidth="291.0" />
+                                       </children>
+                                    </VBox>
+                                 </center>
+                              </BorderPane>
+                           </items>
+                        </SplitPane>
+                     </center>
+                  </BorderPane>
+               </content>
+            </Tab>
+            <Tab text="Быстрая проверка">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <left>
+                        <VBox prefHeight="367.0" prefWidth="147.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="IMEI:">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="10.0" />
+                                 </VBox.margin></Text>
+                              <TextField>
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="10.0" />
+                                 </VBox.margin></TextField>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SN:">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="10.0" />
+                                 </VBox.margin></Text>
+                              <TextField>
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="10.0" />
+                                 </VBox.margin></TextField>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="10.0" />
+                                 </VBox.margin></Text>
+                              <Button mnemonicParsing="false" text="Поиск">
+                                 <VBox.margin>
+                                    <Insets left="48.0" />
+                                 </VBox.margin></Button>
+                           </children>
+                        </VBox>
+                     </left>
+                  </BorderPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
